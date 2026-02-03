@@ -336,6 +336,8 @@ def main():
     display_cols = ['model', 'screen_size', 'chip', 'memory', 'storage', 'price']
     print(df[display_cols].head(20).to_string(index=True))
     print("=" * 120)
+
+    df.sort_values(by=['price', 'memory', 'storage', 'cpu_cores', 'gpu_cores', 'chip', 'title'], ascending=[True, True, True, True, True, True, True], inplace=True)
     
     # 保存结果
     print("\n正在保存结果...")
